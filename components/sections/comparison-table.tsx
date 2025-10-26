@@ -27,7 +27,7 @@ const features = [
   { name: 'Context Retention', ragsense: true, traditional: false, competitors: true },
 ]
 
-const RenderValue = ({ value }: { value: boolean | 'partial' }) => {
+const RenderValue = ({ value }: { value: boolean | string }) => {
   if (value === true) {
     return <Check className="h-5 w-5 text-green-500 mx-auto" />
   } else if (value === 'partial') {
