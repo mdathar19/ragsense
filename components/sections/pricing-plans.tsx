@@ -128,7 +128,7 @@ export default function PricingPlans() {
                       <>
                         <div className="flex items-end justify-center gap-1">
                           <span className="text-4xl font-bold">
-                            ${billingPeriod === 'monthly' ? plan.price.monthly : Math.floor(plan.price.yearly / 12)}
+                            ${billingPeriod === 'monthly' ? plan.price.monthly : Math.floor((plan.price.yearly as number) / 12)}
                           </span>
                           <span className="text-gray-600 dark:text-gray-400 mb-1">/month</span>
                         </div>
