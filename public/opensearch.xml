@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+  <ShortName>RagSense</ShortName>
+  <Description>Search RagSense - AI-Powered Customer Support Platform</Description>
+  <InputEncoding>UTF-8</InputEncoding>
+  <Image width="16" height="16" type="image/x-icon">https://ragsense.co/favicon/favicon.ico</Image>
+  <Image width="32" height="32" type="image/png">https://ragsense.co/favicon/favicon-32x32.png</Image>
+  <Url type="text/html" template="https://ragsense.co/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://ragsense.co/opensearch.xml"/>
+  <moz:SearchForm>https://ragsense.co/search</moz:SearchForm>
+  <Language>en-US</Language>
+  <OutputEncoding>UTF-8</OutputEncoding>
+  <Tags>ai chatbot customer-support automation</Tags>
+  <Contact>support@ragsense.co</Contact>
+</OpenSearchDescription>
