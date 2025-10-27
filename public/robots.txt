@@ -1,0 +1,65 @@
+# robots.txt for https://ragsense.co
+# Allow all web crawlers to access all content
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://ragsense.co/sitemap.xml
+Sitemap: https://www.ragsense.co/sitemap.xml
+
+# Crawl-delay (optional - uncomment if needed)
+# Crawl-delay: 1
+
+# Specific crawler optimizations
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 0
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 0
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: SemrushBot
+Allow: /
+
+# API and sensitive paths (if you want to restrict in future)
+# User-agent: *
+# Disallow: /api/
+# Disallow: /admin/
+# Disallow: /_next/
+# Disallow: /private/
