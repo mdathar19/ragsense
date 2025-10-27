@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { Section, Container } from '@/components/ui/section'
 import { Badge } from '@/components/ui/badge'
 import {
@@ -22,7 +23,7 @@ const steps = [
     icon: LinkIcon,
     color: 'from-blue-500 to-cyan-500',
     features: ['Automatic sitemap detection', 'Smart content extraction', 'Respects robots.txt'],
-    image: '/images/step-1.svg'
+    image: '/images/how-it-works/step-1.png'
   },
   {
     number: '02',
@@ -31,7 +32,7 @@ const steps = [
     icon: Brain,
     color: 'from-orange-500 to-pink-500',
     features: ['Semantic understanding', 'Context mapping', 'Automatic categorization'],
-    image: '/images/step-2.svg'
+    image: '/images/how-it-works/step-2.png'
   },
   {
     number: '03',
@@ -40,7 +41,7 @@ const steps = [
     icon: Sparkles,
     color: 'from-orange-500 to-red-500',
     features: ['Brand customization', 'Response tuning', 'Escalation rules'],
-    image: '/images/step-3.svg'
+    image: '/images/how-it-works/step-3.png'
   },
   {
     number: '04',
@@ -49,7 +50,7 @@ const steps = [
     icon: Code,
     color: 'from-green-500 to-emerald-500',
     features: ['One-line installation', 'Auto-updates', 'No maintenance'],
-    image: '/images/step-4.svg'
+    image: '/images/how-it-works/step-4.png'
   },
 ]
 
@@ -151,13 +152,39 @@ export default function HowItWorks() {
               {/* Visual */}
               <div className="flex-1">
                 <div className="relative">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${step.color} blur-3xl opacity-20`} />
-                  <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 p-8 shadow-2xl">
-                    {/* Placeholder for actual images/animations */}
-                    <div className="aspect-video bg-gray-800 rounded-lg flex items-center justify-center">
-                      <step.icon className="h-24 w-24 text-gray-600" />
+                  {/* Gradient glow effect */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${step.color} blur-3xl opacity-20 -z-10`} />
+
+                  {/* Image container */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+                    className="relative bg-gradient-to-br from-gray-900 to-gray-800 shadow-2xl overflow-hidden"
+                  >
+                    {/* Image */}
+                    <div className="relative aspect-video bg-gray-800">
+                      <Image
+                        src={step.image}
+                        alt={`${step.title} - Step ${step.number}`}
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                        priority={index === 0}
+                      />
+
+                      {/* Overlay gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                     </div>
-                  </div>
+
+                    {/* Corner accents */}
+                    <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${step.color} opacity-10 blur-2xl pointer-events-none`} />
+                    <div className={`absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr ${step.color} opacity-10 blur-2xl pointer-events-none`} />
+                  </motion.div>
+
+                  {/* Decorative border */}
+                  <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${step.color} opacity-20 -z-10 blur-sm`} />
                 </div>
               </div>
             </motion.div>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import { cn } from '@/lib/utils'
 
@@ -175,6 +176,28 @@ export default function RootLayout({
         'font-sans antialiased'
       )}>
         {children}
+
+        {/* RagSense Chat Widget - Initialization */}
+        <Script
+          id="runit-chat-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.RunItChat = window.RunItChat || function() {
+                (window.RunItChat.q = window.RunItChat.q || []).push(arguments);
+              };
+            `
+          }}
+        />
+
+        {/* RagSense Chat Widget - Main Script */}
+        <Script
+          id="runit-chat-widget"
+          src="https://brain.ragsense.co/chat-widget.js"
+          strategy="afterInteractive"
+          data-broker-id="RAGS1761593400037D533"
+          data-api-key="runit_live_c57b5579e0194ba43076bf5cda4e1ed17b936ec925155e0f"
+        />
       </body>
     </html>
   )
