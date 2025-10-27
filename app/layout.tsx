@@ -63,8 +63,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/og-image.png',
-        width: 192,
-        height: 192,
+        width: 1200,
+        height: 630,
         alt: 'RagSense - AI Customer Support Platform'
       }
     ]
@@ -90,9 +90,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon/favicon.ico' },
-      { url: '/favicon/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon/favicon-96x96.png', sizes: '96x96', type: 'image/png' }
+      { url: '/favicon/favicon.ico', sizes: 'any' },
+      { url: '/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/favicon/favicon.svg', type: 'image/svg+xml' }
     ],
     apple: [
       { url: '/favicon/apple-touch-icon.png', sizes: '180x180' }
@@ -103,7 +105,7 @@ export const metadata: Metadata = {
     canonical: 'https://ragsense.co'
   },
   verification: {
-    google: 'google-verification-code',
+    google: 'S07AquBdHVJnGifQ2LJx6YvGAL7FH_HsV-GUisBhhDM',
   },
 }
 
@@ -115,7 +117,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="/favicon/favicon-16x16.png" sizes="16x16" type="image/png" />
+        <link rel="icon" href="/favicon/favicon-32x32.png" sizes="32x32" type="image/png" />
         <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
         <link rel="manifest" href="/favicon/site.webmanifest" />
