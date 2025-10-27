@@ -63,8 +63,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/og-image.png',
-        width: 512,
-        height: 512,
+        width: 192,
+        height: 192,
         alt: 'RagSense - AI Customer Support Platform'
       }
     ]
