@@ -156,7 +156,7 @@ export default function Header() {
                       exit={{ opacity: 0, y: 10 }}
                       className="absolute top-full left-0 mt-2 w-64 rounded-xl bg-white dark:bg-gray-900 shadow-xl border border-gray-200 dark:border-gray-800 overflow-hidden"
                     >
-                      {item.dropdownItems.map((dropdownItem: any) => (
+                      {(item.dropdownItems as any[]).map((dropdownItem: any) => (
                         <Link
                           key={dropdownItem.name}
                           href={dropdownItem.href}
@@ -237,7 +237,7 @@ export default function Header() {
                         </button>
                         {activeDropdown === item.name && 'dropdownItems' in item && item.dropdownItems && (
                           <div className="ml-7 mt-2 space-y-2">
-                            {item.dropdownItems.map((dropdownItem: any) => (
+                            {(item.dropdownItems as any[]).map((dropdownItem: any) => (
                               <Link
                                 key={dropdownItem.name}
                                 href={dropdownItem.href}
