@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { Sparkles, ArrowRight, Cpu, Globe, Shield, BarChart3 } from 'lucide-react'
+import { SITE_SIGNUP_URL } from '@/data/common'
 
 const highlights = [
   { icon: Cpu, label: 'AI-Powered', value: 'GPT-4 & Claude' },
@@ -70,12 +71,12 @@ export default function FeaturesHero() {
             transition={{ delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
           >
-            <Button size="lg" variant="gradient" className="group" asChild>
-              <Link href="https://labs.ragsense.co/signup">
-                Start Free Trial
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <Link href={SITE_SIGNUP_URL} target="_blank" rel="noopener noreferrer">
+                <Button size="lg" variant="gradient" className="group" asChild>
+                    Start Free Trial
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
               </Link>
-            </Button>
             <Button size="lg" variant="outline" asChild>
               <Link href="/docs">
                 View Documentation

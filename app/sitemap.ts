@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Static pages with their priority and change frequency
   const staticPages = [
+    // Main pages
     {
       url: baseUrl,
       lastModified: currentDate,
@@ -24,6 +25,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
+
+    // Documentation pages
     {
       url: `${baseUrl}/docs`,
       lastModified: currentDate,
@@ -31,58 +34,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/blog`,
+      url: `${baseUrl}/docs/introduction`,
       lastModified: currentDate,
-      changeFrequency: 'daily' as const,
-      priority: 0.7,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
     },
     {
-      url: `${baseUrl}/about`,
+      url: `${baseUrl}/docs/quick-start`,
       lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
     },
     {
-      url: `${baseUrl}/contact`,
+      url: `${baseUrl}/docs/installation`,
       lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
     },
     {
-      url: `${baseUrl}/solutions/ecommerce`,
+      url: `${baseUrl}/docs/first-chatbot`,
       lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/solutions/saas`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/solutions/enterprise`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/privacy`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/terms`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/cookies`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.3,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
     },
   ]
 

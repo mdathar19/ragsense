@@ -32,17 +32,17 @@ const navigation = [
     icon: Sparkles,
     description: 'Explore our powerful capabilities'
   },
-  {
-    name: 'Solutions',
-    href: '#',
-    icon: Zap,
-    hasDropdown: true,
-    dropdownItems: [
-      { name: 'For E-commerce', href: '/solutions/ecommerce', icon: Globe, description: 'Boost sales with AI support' },
-      { name: 'For SaaS', href: '/solutions/saas', icon: Code, description: 'Scale customer success' },
-      { name: 'For Enterprise', href: '/solutions/enterprise', icon: Shield, description: 'Enterprise-grade AI solutions' },
-    ]
-  },
+  // {
+  //   name: 'Solutions',
+  //   href: '#',
+  //   icon: Zap,
+  //   hasDropdown: true,
+  //   dropdownItems: [
+  //     { name: 'For E-commerce', href: '/solutions/ecommerce', icon: Globe, description: 'Boost sales with AI support' },
+  //     { name: 'For SaaS', href: '/solutions/saas', icon: Code, description: 'Scale customer success' },
+  //     { name: 'For Enterprise', href: '/solutions/enterprise', icon: Shield, description: 'Enterprise-grade AI solutions' },
+  //   ]
+  // },
   {
     name: 'Pricing',
     href: '/pricing',
@@ -55,24 +55,24 @@ const navigation = [
     icon: BookOpen,
     description: 'Learn how to use RagSense'
   },
-  {
-    name: 'Blog',
-    href: '/blog',
-    icon: FileText,
-    description: 'Latest insights and updates'
-  },
-  {
-    name: 'About',
-    href: '/about',
-    icon: Users,
-    description: 'Meet the team behind RagSense'
-  },
-  {
-    name: 'Contact',
-    href: '/contact',
-    icon: Mail,
-    description: 'Get in touch with us'
-  },
+  // {
+  //   name: 'Blog',
+  //   href: '/blog',
+  //   icon: FileText,
+  //   description: 'Latest insights and updates'
+  // },
+  // {
+  //   name: 'About',
+  //   href: '/about',
+  //   icon: Users,
+  //   description: 'Meet the team behind RagSense'
+  // },
+  // {
+  //   name: 'Contact',
+  //   href: '/contact',
+  //   icon: Mail,
+  //   description: 'Get in touch with us'
+  // },
 ]
 
 export default function Header() {
@@ -125,7 +125,7 @@ export default function Header() {
           <div className="hidden lg:flex lg:items-center lg:gap-8">
             {navigation.map((item) => (
               <div key={item.name} className="relative">
-                {item.hasDropdown ? (
+                {'hasDropdown' in item && item.hasDropdown ? (
                   <button
                     onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
                     className={cn(
@@ -148,16 +148,15 @@ export default function Header() {
                   </Link>
                 )}
 
-                {/* Dropdown Menu */}
-                <AnimatePresence>
-                  {item.hasDropdown && activeDropdown === item.name && item.dropdownItems && (
+                {('hasDropdown' in item && item.hasDropdown && activeDropdown === item.name && 'dropdownItems' in item && item.dropdownItems) ? (
+                  <AnimatePresence key={item.name}>
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       className="absolute top-full left-0 mt-2 w-64 rounded-xl bg-white dark:bg-gray-900 shadow-xl border border-gray-200 dark:border-gray-800 overflow-hidden"
                     >
-                      {item.dropdownItems.map((dropdownItem) => (
+                      {item.dropdownItems.map((dropdownItem: any) => (
                         <Link
                           key={dropdownItem.name}
                           href={dropdownItem.href}
@@ -176,8 +175,8 @@ export default function Header() {
                         </Link>
                       ))}
                     </motion.div>
-                  )}
-                </AnimatePresence>
+                  </AnimatePresence>
+                ) : null}
               </div>
             ))}
           </div>
@@ -221,7 +220,7 @@ export default function Header() {
               <div className="py-4 space-y-2">
                 {navigation.map((item) => (
                   <div key={item.name}>
-                    {item.hasDropdown ? (
+                    {'hasDropdown' in item && item.hasDropdown ? (
                       <>
                         <button
                           onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
@@ -236,9 +235,9 @@ export default function Header() {
                             activeDropdown === item.name && "rotate-180"
                           )} />
                         </button>
-                        {activeDropdown === item.name && item.dropdownItems && (
+                        {activeDropdown === item.name && 'dropdownItems' in item && item.dropdownItems && (
                           <div className="ml-7 mt-2 space-y-2">
-                            {item.dropdownItems.map((dropdownItem) => (
+                            {item.dropdownItems.map((dropdownItem: any) => (
                               <Link
                                 key={dropdownItem.name}
                                 href={dropdownItem.href}

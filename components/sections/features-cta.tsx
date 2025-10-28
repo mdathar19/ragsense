@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { Section, Container } from '@/components/ui/section'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Zap, CheckCircle } from 'lucide-react'
+import { SITE_SIGNUP_URL } from '@/data/common'
 
 export default function FeaturesCTA() {
   return (
@@ -82,17 +83,17 @@ export default function FeaturesCTA() {
             transition={{ delay: 0.4 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Button
-              size="xl"
-              className="bg-white text-orange-700 hover:bg-gray-100 shadow-xl hover:shadow-2xl group"
-              asChild
-            >
-              <Link href="https://labs.ragsense.co/signup">
-                <Zap className="mr-2 h-5 w-5" />
-                Start Free Trial
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            <Link href={SITE_SIGNUP_URL} target="_blank" rel="noopener noreferrer">
+                <Button
+                  size="xl"
+                  className="bg-white text-orange-700 hover:bg-gray-100 shadow-xl hover:shadow-2xl group"
+                  asChild
+                >
+                    <Zap className="mr-2 h-5 w-5" />
+                    Start Free Trial
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
               </Link>
-            </Button>
             <Button
               size="xl"
               variant="outline"

@@ -19,38 +19,38 @@ import {
 const footerLinks = {
   product: [
     { name: 'Features', href: '/features' },
-    { name: 'Integrations', href: '/integrations' },
+    // { name: 'Integrations', href: '/integrations' },
     { name: 'Pricing', href: '/pricing' },
-    { name: 'Changelog', href: '/changelog' },
-    { name: 'API Reference', href: '/docs/api' },
+    // { name: 'Changelog', href: '/changelog' },
+    // { name: 'API Reference', href: '/docs/api' },
   ],
   solutions: [
-    { name: 'E-commerce', href: '/solutions/ecommerce' },
-    { name: 'SaaS', href: '/solutions/saas' },
-    { name: 'Enterprise', href: '/solutions/enterprise' },
-    { name: 'Startups', href: '/solutions/startups' },
-    { name: 'Agencies', href: '/solutions/agencies' },
+    // { name: 'E-commerce', href: '/solutions/ecommerce' },
+    // { name: 'SaaS', href: '/solutions/saas' },
+    // { name: 'Enterprise', href: '/solutions/enterprise' },
+    // { name: 'Startups', href: '/solutions/startups' },
+    // { name: 'Agencies', href: '/solutions/agencies' },
   ],
   resources: [
     { name: 'Documentation', href: '/docs' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Guides', href: '/guides' },
-    { name: 'Webinars', href: '/webinars' },
-    { name: 'Case Studies', href: '/case-studies' },
+    // { name: 'Blog', href: '/blog' },
+    // { name: 'Guides', href: '/guides' },
+    // { name: 'Webinars', href: '/webinars' },
+    // { name: 'Case Studies', href: '/case-studies' },
   ],
   company: [
-    { name: 'About', href: '/about' },
-    { name: 'Careers', href: '/careers' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'Partners', href: '/partners' },
-    { name: 'Press', href: '/press' },
+    // { name: 'About', href: '/about' },
+    // { name: 'Careers', href: '/careers' },
+    // { name: 'Contact', href: '/contact' },
+    // { name: 'Partners', href: '/partners' },
+    // { name: 'Press', href: '/press' },
   ],
   legal: [
-    { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Terms of Service', href: '/terms' },
-    { name: 'Cookie Policy', href: '/cookies' },
-    { name: 'Security', href: '/security' },
-    { name: 'GDPR', href: '/gdpr' },
+    // { name: 'Privacy Policy', href: '/privacy' },
+    // { name: 'Terms of Service', href: '/terms' },
+    // { name: 'Cookie Policy', href: '/cookies' },
+    // { name: 'Security', href: '/security' },
+    // { name: 'GDPR', href: '/gdpr' },
   ],
 }
 
@@ -123,13 +123,13 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone className="h-4 w-4" />
-                  <a href="tel:+1234567890" className="hover:text-orange-600">
-                    +1 (234) 567-890
+                  <a href="tel:+918617852693" className="hover:text-orange-600">
+                    +91 (861) 785-2693
                   </a>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="h-4 w-4" />
-                  <span>San Francisco, CA</span>
+                  <span>Kolkata, India</span>
                 </div>
               </div>
             </div>
@@ -151,7 +151,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div>
+            {/* <div>
               <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Solutions</h4>
               <ul className="space-y-2">
                 {footerLinks.solutions.map((link) => (
@@ -165,7 +165,7 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
 
             <div>
               <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Resources</h4>
@@ -183,7 +183,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div>
+            {/* <div>
               <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Company</h4>
               <ul className="space-y-2">
                 {footerLinks.company.map((link) => (
@@ -197,7 +197,7 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -206,18 +206,6 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex flex-col md:flex-row items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
               <span>&copy; {currentYear} RagSense. All rights reserved.</span>
-              <div className="hidden md:block w-px h-4 bg-gray-300 dark:bg-gray-700" />
-              <div className="flex items-center gap-4">
-                {footerLinks.legal.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className="hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
             </div>
 
             {/* Social Links */}

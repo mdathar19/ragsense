@@ -18,6 +18,7 @@ import {
   BarChart3,
   CheckCircle
 } from 'lucide-react'
+import { SITE_SIGNUP_URL } from '@/data/common'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -44,13 +45,6 @@ export default function Hero() {
 
       <Container className="relative">
         <div className="text-center max-w-5xl mx-auto pt-20 lg:pt-32">
-          {/* Badge */}
-          <motion.div {...fadeInUp} className="mb-6">
-            <Badge variant="gradient" className="px-4 py-1.5">
-              <Sparkles className="h-3 w-3 mr-2" />
-              AI-Powered Customer Support Platform
-            </Badge>
-          </motion.div>
 
           {/* Heading */}
           <motion.h1
@@ -123,18 +117,18 @@ export default function Hero() {
             transition={{ delay: 0.4, duration: 0.5 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
           >
-            <Button size="xl" variant="gradient" className="group" asChild>
-              <Link href="https://labs.ragsense.co/signup">
-                Start Free Trial
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <Link href={SITE_SIGNUP_URL} target="_blank" rel="noopener noreferrer">
+                <Button size="xl" variant="gradient" className="group" asChild>
+                    Start Free Trial
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
               </Link>
-            </Button>
-            <Button size="xl" variant="outline" asChild>
-              <Link href="/demo">
-                <MessageSquare className="mr-2 h-5 w-5" />
-                See Live Demo
+              <Link href="/demo" target="_blank" rel="noopener noreferrer">
+                <Button size="xl" variant="outline" asChild>
+                    <MessageSquare className="mr-2 h-5 w-5" />
+                    See Live Demo
+                </Button>
               </Link>
-            </Button>
           </motion.div>
 
           {/* Trust Indicators */}
